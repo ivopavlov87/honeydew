@@ -20,7 +20,6 @@ class Api::V1::UsersController < ApplicationController
     if @user.save
       render json: @user, status: :created, location: "/api/v1/#{@user}"
     else
-      debugger
       render json: @user.errors.full_messages, status: :unprocessable_entity
     end
   end
